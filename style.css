@@ -1,0 +1,108 @@
+ /* Custom Animations & Design Recipes */
+        @keyframes vpRevealUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes vpRevealZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes vpFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes vpBlob {
+
+            0%,
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.15);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+
+        @keyframes vpShimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+        }
+
+        .reveal.in-view {
+            animation: vpRevealUp 0.8s cubic-bezier(0.21, 1.02, 0.43, 1.01) forwards;
+        }
+
+        .reveal-zoom {
+            opacity: 0;
+        }
+
+        .reveal-zoom.in-view {
+            animation: vpRevealZoom 0.8s cubic-bezier(0.21, 1.02, 0.43, 1.01) forwards;
+        }
+
+        .reveal-delay-1 {
+            animation-delay: 80ms !important;
+        }
+
+        .reveal-delay-2 {
+            animation-delay: 160ms !important;
+        }
+
+        .reveal-delay-3 {
+            animation-delay: 240ms !important;
+        }
+
+        .vp-float {
+            animation: vpFloat 6s ease-in-out infinite;
+        }
+
+        .vp-blob {
+            animation: vpBlob 14s ease-in-out infinite;
+        }
+
+        .card-tilt {
+            transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .card-tilt:hover {
+                transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+            }
+        }
